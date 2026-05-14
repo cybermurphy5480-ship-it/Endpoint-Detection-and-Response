@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { -webkit-font-smoothing: antialiased; }
+  body { @apply bg-slate-50 text-gray-900; }
+  * { scrollbar-width: thin; scrollbar-color: #cbd5e1 transparent; }
+  *::-webkit-scrollbar { width: 5px; height: 5px; }
+  *::-webkit-scrollbar-track { background: transparent; }
+  *::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+}
+
+@layer components {
+
+  /* ── Severity badges ─────────────────── */
+  .badge-critical {
+    @apply inline-flex items-center px-2 py-0.5 rounded-md text-[11px] font-bold tracking-wide;
+    background: #fef2f2; color: #dc2626; border: 1px solid #fecaca;
+  }
+  .badge-high {
+    @apply inline-flex items-center px-2 py-0.5 rounded-md text-[11px] font-bold tracking-wide;
+    background: #fff7ed; color: #ea580c; border: 1px solid #fed7aa;
+  }
+  .badge-medium {
+    @apply inline-flex items-center px-2 py-0.5 rounded-md text-[11px] font-bold tracking-wide;
+    background: #fefce8; color: #ca8a04; border: 1px solid #fef08a;
+  }
+  .badge-low {
+    @apply inline-flex items-center px-2 py-0.5 rounded-md text-[11px] font-bold tracking-wide;
+    background: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe;
+  }
+  .badge-info {
+    @apply inline-flex items-center px-2 py-0.5 rounded-md text-[11px] font-bold tracking-wide;
+    background: #f8fafc; color: #64748b; border: 1px solid #e2e8f0;
+  }
+
+  /* ── Table rows ──────────────────────── */
+  .row-suspicious { background: #fff5f5; }
+  .row-suspicious:hover { background: #fee2e2 !important; }
+  .row-normal { background: white; }
+  .row-normal:hover { background: #f8fafc !important; }
+
+  /* ── Stat card ───────────────────────── */
+  .stat-card {
+    @apply bg-white rounded-2xl p-5;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+  }
+
+  /* ── Panel card ──────────────────────── */
+  .panel-card {
+    @apply bg-white rounded-2xl;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  }
+
+  /* ── Action buttons ──────────────────── */
+  .btn-action {
+    @apply inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-[11px] font-semibold transition-all cursor-pointer;
+  }
+  .btn-block  { @apply btn-action bg-red-50 text-red-600 hover:bg-red-100; border: 1px solid #fecaca; }
+  .btn-allow  { @apply btn-action bg-emerald-50 text-emerald-700 hover:bg-emerald-100; border: 1px solid #a7f3d0; }
+  .btn-kill   { @apply btn-action bg-orange-50 text-orange-600 hover:bg-orange-100; border: 1px solid #fed7aa; }
+
+  /* ── New action buttons (ActionButtons.jsx) ── */
+  .action-btn { @apply inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-[11px] font-semibold transition-all cursor-pointer; }
+  .btn-danger  { @apply action-btn bg-red-50 text-red-600 hover:bg-red-100; border: 1px solid #fecaca; }
+  .btn-warning { @apply action-btn bg-amber-50 text-amber-700 hover:bg-amber-100; border: 1px solid #fde68a; }
+  .btn-critical { @apply action-btn bg-purple-50 text-purple-700 hover:bg-purple-100; border: 1px solid #ddd6fe; }
+}
